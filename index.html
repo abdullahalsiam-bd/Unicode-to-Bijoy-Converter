@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bijoy & Unicode Converter | 100% Accurate Bangla Converter</title>
+    <meta name="description" content="A beautiful, ultra-fast and 100% accurate Bijoy to Unicode and Unicode to Bijoy Bangla text converter with SutonnyMJ support and mixed text intelligence.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260927">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4'></path><polyline points='14 2 14 8 20 8'></polyline><path d='M2 15h10'></path><path d='m9 18 3-3-3-3'></path></svg>">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <path d="M2 15h10"></path>
+                    <path d="m9 18 3-3-3-3"></path>
+                </svg>
+                <h1>Bangla Converter</h1>
+            </div>
+            <p class="subtitle">Convert between Unicode & Bijoy easily and seamlessly.</p>
+        </header>
+
+        <main class="converter-layout">
+            <!-- Unicode Section -->
+            <div class="panel" id="unicodePanel">
+                <div class="panel-header">
+                    <h2>Unicode / অভ্র (Avro)</h2>
+                    <div class="actions">
+                        <span id="unicodeCount" class="char-count" style="font-size: 0.85rem; color: var(--text-secondary); margin-right: 8px; align-self: center;">0 chars</span>
+                        <button class="btn btn-icon copy-btn" id="copyUnicodeBtn" onclick="copyText('unicodeInput', this)" title="Copy Unicode Text">
+                            <svg class="copy-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <textarea id="unicodeInput" class="custom-textarea font-unicode" placeholder="এখানে ইউনিকোড লেখা পেস্ট করুন বা টাইপ করুন... (Ctrl+Enter চাপলে কনভার্ট হবে)"></textarea>
+            </div>
+
+            <!-- Conversion Controls -->
+            <div class="conversion-controls" style="flex-direction: column;">
+                <div class="primary-controls" style="display: flex; gap: 1rem; width: 100%; justify-content: center;">
+                    <button class="btn btn-primary convert-btn" id="toBijoyBtn" onclick="convertUnicodeToBijoy()" title="Convert Unicode to Bijoy (Ctrl+Enter)">
+                        <span>To Bijoy</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </button>
+                    
+                    <button class="btn btn-secondary convert-btn" id="toUnicodeBtn" onclick="convertBijoyToUnicode()" title="Convert Bijoy to Unicode (Ctrl+Enter)">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>
+                        <span>To Unicode</span>
+                    </button>
+                </div>
+                <div class="secondary-controls" style="display: flex; gap: 1rem; width: 100%; justify-content: center; margin-top: 1rem;">
+                    <button class="btn btn-danger btn-clear-all" id="clearAllBtn" onclick="clearAll()" title="Clear Both Areas" style="padding: 8px 16px; font-size: 0.9rem;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px; vertical-align: text-bottom;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        Clear All
+                    </button>
+                    <button class="btn btn-success" id="fixTextBtn" onclick="fixText()" type="button" title="Fix broken conjuncts, nuktas & spacing" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid #10b981; padding: 8px 16px; font-size: 0.9rem; font-weight: 600; border-radius: 8px; display: flex; align-items: center; cursor: pointer; transition: all 0.2s;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z"></path><path d="m14 7 3 3"></path><path d="M5 6v4"></path><path d="M19 14v4"></path><path d="M10 2v2"></path><path d="M7 8H3"></path></svg>
+                        Fix Text
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bijoy Section -->
+            <div class="panel" id="bijoyPanel">
+                <div class="panel-header">
+                    <h2>Bijoy / বিজয় (SutonnyMJ)</h2>
+                    <div class="actions">
+                        <span id="bijoyCount" class="char-count" style="font-size: 0.85rem; color: var(--text-secondary); margin-right: 8px; align-self: center;">0 chars</span>
+                        <button class="btn btn-icon copy-btn" id="copyBijoyBtn" onclick="copyText('bijoyInput', this)" title="Copy Bijoy Text">
+                            <svg class="copy-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <textarea id="bijoyInput" class="custom-textarea font-bijoy" placeholder="এখানে বিজয় (SutonnyMJ) লেখা পেস্ট করুন বা টাইপ করুন... (Ctrl+Enter চাপলে কনভার্ট হবে)"></textarea>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>Made with ❤️ for beautiful web experiences. | <a href="https://abdullahalsiam.bd" target="_blank" style="color:var(--accent-1); text-decoration:none; font-weight:600;">Abdullah Al Siam</a></p>
+        </footer>
+    </div>
+
+    <!-- Production Bangla Engine -->
+    <script src="js/engine.js?v=20260927"></script>
+    
+    <!-- Custom Application Logic -->
+    <script>
+        let lastEditedSide = 'unicode';
+
+        const unicodeBox = document.getElementById('unicodeInput');
+        const bijoyBox = document.getElementById('bijoyInput');
+        const unicodeCountEl = document.getElementById('unicodeCount');
+        const bijoyCountEl = document.getElementById('bijoyCount');
+
+        function updateCounts() {
+            const uText = unicodeBox.value;
+            const bText = bijoyBox.value;
+            unicodeCountEl.textContent = uText.length + ' chars';
+            bijoyCountEl.textContent = bText.length + ' chars';
+        }
+
+        unicodeBox.addEventListener('input', () => { lastEditedSide = 'unicode'; updateCounts(); });
+        bijoyBox.addEventListener('input', () => { lastEditedSide = 'bijoy'; updateCounts(); });
+        unicodeBox.addEventListener('focus', () => { lastEditedSide = 'unicode'; });
+        bijoyBox.addEventListener('focus', () => { lastEditedSide = 'bijoy'; });
+
+        // Keyboard Shortcuts: Ctrl+Enter inside either box triggers conversion
+        unicodeBox.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'Enter') {
+                e.preventDefault();
+                convertUnicodeToBijoy();
+            }
+        });
+        bijoyBox.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'Enter') {
+                e.preventDefault();
+                convertBijoyToUnicode();
+            }
+        });
+
+        function convertUnicodeToBijoy() {
+            try {
+                const unicodeText = unicodeBox.value;
+                if (!unicodeText.trim()) return showToast('Please enter Unicode text first!');
+                
+                const bijoyText = BanglaConverter.unicodeToBijoy(unicodeText);
+                bijoyBox.value = bijoyText;
+                updateCounts();
+                highlightPanel('bijoyInput');
+                showToast('Converted to Bijoy Successfully');
+            } catch (err) {
+                console.error('Unicode to Bijoy error:', err);
+                showToast('Conversion failed. Please check input text.');
+            }
+        }
+
+        function convertBijoyToUnicode() {
+            try {
+                const bijoyText = bijoyBox.value;
+                if (!bijoyText.trim()) return showToast('Please enter Bijoy text first!');
+                
+                const unicodeText = BanglaConverter.bijoyToUnicode(bijoyText);
+                unicodeBox.value = unicodeText;
+                updateCounts();
+                highlightPanel('unicodeInput');
+                showToast('Converted to Unicode Successfully');
+            } catch (err) {
+                console.error('Bijoy to Unicode error:', err);
+                showToast('Conversion failed. Please check input text.');
+            }
+        }
+
+        function fixText() {
+            try {
+                const unicodeText = unicodeBox.value || '';
+                const bijoyText = bijoyBox.value || '';
+
+                if (!unicodeText.trim() && !bijoyText.trim()) {
+                    showToast('কিছু লিখুন বা পেস্ট করুন!');
+                    return;
+                }
+
+                // If user was working on Bijoy or only Bijoy has text
+                if ((lastEditedSide === 'bijoy' && bijoyText.trim()) || (!unicodeText.trim() && bijoyText.trim())) {
+                    const rawUni = BanglaConverter.bijoyToUnicode(bijoyText);
+                    const cleanUni = BanglaConverter.fixBanglaText(rawUni);
+                    unicodeBox.value = cleanUni;
+                    bijoyBox.value = BanglaConverter.unicodeToBijoy(cleanUni);
+                } else {
+                    // Working on Unicode
+                    const cleanUni = BanglaConverter.fixBanglaText(unicodeText);
+                    unicodeBox.value = cleanUni;
+                    bijoyBox.value = BanglaConverter.unicodeToBijoy(cleanUni);
+                }
+
+                updateCounts();
+                highlightPanel('unicodeInput');
+                highlightPanel('bijoyInput');
+                showToast('Auto Fix completed successfully!');
+            } catch (err) {
+                console.error('Fix Text error:', err);
+                showToast('Fix Text failed — engine could not process this text.');
+            }
+        }
+
+        function clearAll() {
+            unicodeBox.value = '';
+            bijoyBox.value = '';
+            lastEditedSide = 'unicode';
+            updateCounts();
+            unicodeBox.focus();
+            showToast('Cleared successfully');
+        }
+
+        function copyText(id, btnElement) {
+            const el = document.getElementById(id);
+            if (!el || !el.value) {
+                return showToast('Nothing to copy!');
+            }
+
+            const text = el.value;
+            const originalHTML = btnElement ? btnElement.innerHTML : null;
+
+            function onCopySuccess() {
+                if (btnElement) {
+                    btnElement.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+                    btnElement.style.borderColor = '#10b981';
+                    setTimeout(() => {
+                        btnElement.innerHTML = originalHTML;
+                        btnElement.style.borderColor = '';
+                    }, 1800);
+                }
+                showToast('Copied to clipboard!');
+            }
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(onCopySuccess).catch(() => {
+                    fallbackCopy(el, onCopySuccess);
+                });
+            } else {
+                fallbackCopy(el, onCopySuccess);
+            }
+        }
+
+        function fallbackCopy(el, onSuccess) {
+            try {
+                el.select();
+                el.setSelectionRange(0, 999999);
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    onSuccess();
+                } else {
+                    showToast('Failed to copy. Please copy manually.');
+                }
+            } catch (err) {
+                console.error('Clipboard fallback error:', err);
+                showToast('Failed to copy. Please copy manually.');
+            }
+        }
+
+        let toastTimeout;
+        function showToast(message) {
+            const existing = document.querySelector('.toast-container');
+            if (existing) existing.remove();
+            clearTimeout(toastTimeout);
+
+            let toast = document.createElement('div');
+            toast.className = "toast-container show";
+            toast.innerText = message;
+            document.body.appendChild(toast);
+            
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 400);
+            }, 2600);
+        }
+
+        function highlightPanel(id) {
+            const panel = document.getElementById(id).closest('.panel');
+            if (panel) {
+                panel.classList.add('highlight');
+                setTimeout(() => panel.classList.remove('highlight'), 600);
+            }
+        }
+
+        // Initialize count badges
+        updateCounts();
+    </script>
+</body>
+</html>
