@@ -1,66 +1,204 @@
-﻿# Bijoy ↔ Unicode Converter
+# Bangla Converter
 
-A **100% accurate**, ultra-fast **Bangla Bijoy ↔ Unicode** converter. Convert between Bijoy (SutonnyMJ) and Unicode Bengali text seamlessly — including mixed English/Bangla content, complex conjuncts, reph, and numbers.
+A fast, lightweight, and user-friendly web tool for converting Bangla text between **Unicode (Avro)** and **Bijoy (SutonnyMJ)** formats.
 
-**Live Demo:** [abdullahalsiam.bd](https://abdullahalsiam.bd)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-banglaconverter.pages.dev-5B3DF5?style=for-the-badge)](https://banglaconverter.pages.dev/)
+[![Built With](https://img.shields.io/badge/Built%20With-HTML%20%7C%20CSS%20%7C%20JavaScript-111827?style=for-the-badge)](#tech-stack)
+[![Client Side](https://img.shields.io/badge/Processing-100%25%20Client--Side-16A34A?style=for-the-badge)](#privacy)
 
----
+> Convert Bangla text between Unicode and Bijoy quickly, directly in your browser.
 
-## Features
+## 🌐 Live Demo
 
-- **Unicode → Bijoy** — Convert Avro/Unicode Bangla to Bijoy (SutonnyMJ) encoding
-- **Bijoy → Unicode** — Convert legacy Bijoy text to modern Unicode Bangla
-- **Mixed Text Support** — Preserves English words, URLs, emails, and numbers automatically
-- **Fix Text** — Auto-repairs broken conjuncts, zero-width artifacts, and misaligned vowels
-- **Copy to Clipboard** — One-click copy with visual feedback
-- **Clear All** — Reset both panels at once
-- **Keyboard Shortcut** — Ctrl+Enter to convert
-- **Character Counter** — Live char count for both panels
-- **Mobile Responsive** — Works great on all screen sizes
-- **Zero Dependencies** — Pure vanilla HTML, CSS, JavaScript
+**https://banglaconverter.pages.dev/**
 
 ---
 
-## Project Structure
+## 📌 Project Overview
 
+**Bangla Converter** is a browser-based utility designed to make Unicode ↔ Bijoy conversion simple and accessible.
+
+The interface provides separate workspaces for Unicode and Bijoy text, with quick conversion controls, copy/paste support, character counts, and a text-fixing utility. The project is designed around a clean and responsive user experience so it can be used comfortably on both desktop and mobile devices.
+
+All text processing is performed on the client side, so users can convert text without needing to upload or store their content on a remote server.
+
+## ✨ Features
+
+- 🔄 **Unicode → Bijoy** conversion
+- 🔄 **Bijoy → Unicode** conversion
+- 📋 Easy **copy & paste** workflow
+- 🛠️ **Fix Text** utility for common formatting issues
+- 🗑️ **Clear All** control
+- 🔢 Real-time **character count**
+- 📱 Fully **responsive** interface
+- ⚡ Fast browser-based processing
+- 🔒 **Client-side processing**
+- 🚫 No account or login required
+- 🎨 Clean and minimal modern UI
+
+## 🖥️ Interface
+
+The application uses a two-panel workflow:
+
+```text
+┌─────────────────────────────┐     ┌─────────────────────────────┐
+│ Unicode / অঙ্গ (Avro)       │     │ Bijoy / বিজয় (SutonnyMJ)   │
+│                             │     │                             │
+│       Input Text            │     │       Converted Text        │
+│                             │     │                             │
+└─────────────────────────────┘     └─────────────────────────────┘
+                 │
+          To Bijoy / To Unicode
 ```
-bijoy-unicode-converter/
-├── index.html          # Main application UI
-├── style.css           # Styling (glassmorphism, responsive, dark-ready)
-├── js/
-│   └── engine.js       # Core conversion engine (all logic, no dependencies)
-└── SutonnyMJ.ttf       # Bijoy font (required for Bijoy text rendering)
-```
 
----
+## 🧰 Tech Stack
 
-## Usage
+| Technology | Purpose |
+|---|---|
+| **HTML5** | Application structure |
+| **CSS3** | Styling, layout & responsive design |
+| **JavaScript** | Conversion logic & interactions |
+| **Cloudflare Pages** | Web deployment |
 
-Just open `index.html` in any modern browser — no build step, no server required.
+## 🚀 Getting Started
 
-Or serve it with any static server:
+### 1. Clone the repository
+
 ```bash
-npx http-server .
+git clone https://github.com/YOUR-USERNAME/bangla-converter.git
+cd bangla-converter
 ```
 
+### 2. Open the project
+
+This is a client-side web application, so no backend server is required.
+
+You can simply open:
+
+```text
+index.html
+```
+
+in your browser.
+
+### 3. Run locally
+
+For a better development experience, use any local static server.
+
+For example:
+
+```bash
+python -m http.server 8000
+```
+
+Then open:
+
+```text
+http://localhost:8000
+```
+
+## 📁 Project Structure
+
+```text
+bangla-converter/
+│
+├── index.html
+├── style.css
+├── script.js
+│
+├── assets/
+│   ├── icons/
+│   └── images/
+│
+└── README.md
+```
+
+> File names may differ depending on the current project structure.
+
+## 🔐 Privacy
+
+Bangla Converter is designed with a **client-side-first approach**.
+
+User-entered text is processed directly in the browser rather than being intentionally uploaded to a backend for conversion. This helps keep the conversion process fast and minimizes unnecessary data handling.
+
+**Do not enter sensitive information into any public web tool unless you are comfortable doing so.**
+
+## 📱 Responsive Design
+
+The interface is optimized for:
+
+- 💻 Desktop
+- 🖥️ Laptop
+- 📱 Mobile
+- 📟 Tablet
+
+The layout adapts to smaller screens while keeping the main conversion workflow accessible.
+
+## 🎯 Use Cases
+
+Bangla Converter can be useful for:
+
+- Bangla content writers
+- Students
+- Designers
+- Developers
+- Bloggers
+- Publishers
+- Social media creators
+- Office documentation
+- Users working with legacy Bijoy text
+
+## 🔮 Future Improvements
+
+Potential improvements include:
+
+- Enhanced conversion accuracy
+- More text-formatting tools
+- Keyboard shortcuts
+- Drag & drop text/file support
+- Improved mobile editing experience
+- Additional Bangla text utilities
+- Progressive Web App (PWA) support
+
+## 🤝 Contributing
+
+Contributions, suggestions, and improvements are welcome.
+
+1. Fork the repository
+2. Create a new branch
+
+```bash
+git checkout -b feature/your-feature
+```
+
+3. Make your changes
+4. Commit your changes
+
+```bash
+git commit -m "Add your feature"
+```
+
+5. Push the branch
+
+```bash
+git push origin feature/your-feature
+```
+
+6. Open a Pull Request
+
+## 📄 License
+
+No license has been specified for this project yet.
+
+If you plan to make the repository open source, add an appropriate license file such as **MIT**, **Apache-2.0**, or another license that matches your intended usage.
+
+## 🔗 Links
+
+- **Live Website:** https://banglaconverter.pages.dev/
+- **GitHub:** Add your repository URL here
+
 ---
 
-## How It Works
-
-The engine (`js/engine.js`) uses a **deterministic regex-based pipeline**:
-
-1. **Unicode → Bijoy**: Tokenizes Unicode text, applies a compiled bijoy string map with reph/hasanta/kar reordering
-2. **Bijoy → Unicode**: Splits on whitespace, classifies each token as Bijoy or English using `isDefiniteBijoyToken()` + `isEnglishToken()` heuristics (with ENGLISH_DICT of ~700 words), then applies the reverse map
-3. **Fix Text**: Strips zero-width spaces, fixes decomposed nuktas, repairs split vowel markers
-
----
-
-## Developed By
-
-**Abdullah Al Siam** — [abdullahalsiam.bd](https://abdullahalsiam.bd)
-
----
-
-## License
-
-MIT
+<p align="center">
+  Made with ❤️ for Bangla text conversion
+</p>
