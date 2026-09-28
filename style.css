@@ -699,3 +699,91 @@ h1 {
         animation-iteration-count: 1 !important;
     }
 }
+/* Bijoy placeholder uses Unicode font for consistent look */
+#bijoyInput::placeholder {
+    font-family: "Noto Sans Bengali", sans-serif;
+    font-size: clamp(1.05rem, 1.7vw, 1.22rem);
+    letter-spacing: normal;
+}
+
+/* ── Beautiful Footer ── */
+.app-footer {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    color: var(--text-secondary);
+    font-size: .875rem;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-weight: 650;
+    color: var(--text-primary);
+    letter-spacing: -.01em;
+}
+
+.footer-name {
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.footer-divider {
+    width: 1px;
+    height: 16px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+}
+
+.footer-credit {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-secondary);
+}
+
+.footer-author {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px 3px 7px;
+    background: linear-gradient(135deg, rgba(59,130,246,.08), rgba(139,92,246,.08));
+    border: 1px solid rgba(139, 92, 246, .18);
+    border-radius: 999px;
+    color: var(--accent-2);
+    font-weight: 700;
+    font-size: .85rem;
+    text-decoration: none;
+    transition: background .2s, border-color .2s, transform .18s;
+    letter-spacing: -.01em;
+}
+
+.footer-author:hover {
+    background: linear-gradient(135deg, rgba(59,130,246,.14), rgba(139,92,246,.14));
+    border-color: rgba(139, 92, 246, .35);
+    transform: translateY(-1px);
+}
+
+.footer-author svg {
+    color: var(--accent-1);
+    flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+    .app-footer { margin-top: 22px; padding-top: 16px; }
+    .footer-inner { gap: 10px; font-size: .82rem; }
+    .footer-divider { display: none; }
+    .footer-brand { font-size: .82rem; }
+}
