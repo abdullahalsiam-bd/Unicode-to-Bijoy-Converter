@@ -504,9 +504,10 @@
             .replace(/ৌ+/g, 'ৌ')
             .replace(/([\u0995-\u09B9\u09DC-\u09DF])\s+([ািীুূৃেৈোৌ্])/g, '$1$2')
             .replace(/্([ািীুূৃেৈোৌ])/g, '$1')
-            .replace(/্+/g, '্')
+            .replace(/\u09CD+/g, '\u09CD')
+            .replace(/\u09CD(?=[\s\r\n\u0964,;:?!)\]}'\"]|$)/g, '')
+            .replace(/\u09CD(?=[\s\r\n।,;:?!)\]}'\"]|$)/g, '')  // remove stray hasanta before space/end
             .replace(/[ \t]+$/gm, "")
-            .replace(/[^\S\r\n]{2,}/g, " ");
     }
 
     var BanglaLikhi = {
