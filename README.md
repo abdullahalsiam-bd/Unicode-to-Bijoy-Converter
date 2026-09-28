@@ -1,4 +1,4 @@
-# Bangla Converter
+﻿# Bangla Converter
 
 A fast, lightweight, and user-friendly web tool for converting Bangla text between **Unicode (Avro)** and **Bijoy (SutonnyMJ)** formats.
 
