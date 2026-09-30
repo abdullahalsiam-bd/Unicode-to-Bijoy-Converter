@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bijoy & Unicode Converter | 100% Accurate Bangla Converter</title>
     <meta name="description"
-        content="A beautiful, ultra-fast and 100% accurate Bijoy to Unicode and Unicode to Bijoy Bangla text converter with SutonnyMJ support and mixed text intelligence.">
+        content="A fast and accurate Bijoy to Unicode and Unicode to Bijoy Bangla text converter with SutonnyMJ support.">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=20260929">
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml;utf8, svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4'></path><polyline points='14 2 14 8 20 8'></polyline><path d='M2 15h10'></path><path d='m9 18 3-3-3-3'></path></svg>">
+        href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4'></path><polyline points='14 2 14 8 20 8'></polyline><path d='M2 15h10'></path><path d='m9 18 3-3-3-3'></path></svg>">
 </head>
 
 <body>
@@ -32,7 +32,6 @@
         </header>
 
         <main class="converter-layout" id="converterApp">
-            <!-- Unicode Section -->
             <div class="panel" id="unicodePanel">
                 <div class="panel-header">
                     <h2>Unicode / অভ্র (Avro)</h2>
@@ -53,7 +52,6 @@
                     placeholder="এখানে ইউনিকোড বাংলা লিখুন বা পেস্ট করুন..."></textarea>
             </div>
 
-            <!-- Conversion Controls -->
             <div class="conversion-controls">
                 <div class="primary-controls">
                     <button type="button" class="btn btn-primary convert-btn action-btn action-btn-primary"
@@ -105,7 +103,6 @@
                 </div>
             </div>
 
-            <!-- Bijoy Section -->
             <div class="panel" id="bijoyPanel">
                 <div class="panel-header">
                     <h2>Bijoy / বিজয় (SutonnyMJ)</h2>
@@ -151,10 +148,8 @@
 
     </div>
 
-    <!-- Production Bangla Engine -->
     <script src="js/engine.js?v=20260927"></script>
 
-    <!-- Custom Application Logic -->
     <script>
         let lastEditedSide = 'unicode';
 
