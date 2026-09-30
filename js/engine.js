@@ -1,7 +1,5 @@
 ﻿/**
  * Bangla Unicode <-> Bijoy (SutonnyMJ) High-Precision Conversion Engine
- * Enterprise Edition - 100% Parity with bangla.plus + Advanced Mixed English/Bangla AI Engine
- * Copyright (c) 2026. All rights reserved.
  */
 
 (function (root, factory) {
@@ -65,24 +63,23 @@
         return arr;
     }
 
-    // --- Maps from bangla.plus ---
     var bijoy_string_conversion_map = {
-        "i¨":"র‌্য","ª¨":"্র্য","°":"ক্ক","±":"ক্ট","³":"ক্ত","K¡":"ক্ব","¯Œ":"স্ক্র","µ":"ক্র","K¬":"ক্ল","¶è":"ক্ষ্ণ","þ":"হ্ম","²":"ক্ষ্ম","ÿè":"ক্ষ্ম","•¶":"ঙ্ক্ষ","•ÿ":"ঙ্ক্ষ","¶":"ক্ষ","ÿ":"ক্ষ","·":"ক্স","´":"ক্ম","¸":"গু","»":"গ্ধ","Mœ":"গ্ন","M¥":"গ্ম","MÖƒ":"গ্রূ","Mø":"গ্ল","M¬":"গ্ল","M­":"গ্ল","Nœ":"ঘ্ন","¼":"ঙ্ক","•L":"ঙ্খ","½":"ঙ্গ","•N":"ঙ্ঘ","•":"ক্স","”P":"চ্চ","”Q¡":"চ্ছ্ব","”Q":"চ্ছ","”T":"চ্ঞ","¾¡":"জ্জ্ব","¾":"জ্জ","À":"জ্ঝ","Á":"জ্ঞ","R¡":"জ্ব","R¦":"জ্ব","Â":"ঞ্চ","Ã":"ঞ্ছ","Ä":"ঞ্জ","Å":"ঞ্ঝ","Æ":"ট্ট","U¡":"ট্ব","U¥":"ট্ম","Ç":"ড্ড","È":"ণ্ট","É":"ণ্ঠ","Ý":"ন্স","Ê":"ণ্ড","Ð":"ণ্ড","š‘":"ন্তু","Y^":"ণ্ব","Ë¡":"ত্ত্ব","šÍ¡":"ন্ত্ব","š—¡":"ন্ত্ব","Ë":"ত্ত","Ì":"ত্থ","Z¥":"ত্ম","Í":"ত্ম","Z¡":"ত্ব","Zœ":"ত্ন","Î":"ত্র","_¡":"থ্ব","˜M":"দ্গ","˜N":"দ্ঘ","Ï":"দ্দ","×":"দ্ধ","›Ø":"ন্দ্ব","˜¡":"দ্ব","Ø":"দ্ব","™£":"দ্ভ্র","™¢":"দ্ভ","Ù":"দ্ম","`ªƒ":"দ্রূ","aªƒ":"ধ্রূ","aŸ":"ধ্ব","a¥":"ধ্ম","›U":"ন্ট","Ú":"ন্ঠ","Û":"ন্ড","šÍ":"ন্ত","š—":"ন্ত","š¿":"ন্ত্র","š’":"ন্থ","›`":"ন্দ","Ü":"ন্ধ","Yœ":"ণ্ন","Yè":"ণ্ন","bœ":"ন্ন","š^":"ন্ব","b¥":"ন্ম","š§":"ন্ম","Þ":"প্ট","ß":"প্ত","cœ":"প্ন","à":"প্প","c¬":"প্ল","cø":"প্ল","c­":"প্ল","á":"প্স","cÖƒ":"প্রূ","d¬":"ফ্ল","â":"ব্জ","ã":"ব্দ","ä":"ব্ধ","eŸ":"ব্ব","e­":"ব্ল","eø":"ব্ল","eªƒ":"ব্রূ","åƒ":"ভ্রূ","å":"ভ্র","f‚":"ভূ","gœ":"ম্ন","¤œ":"ম্ন","¤ú":"ম্প","¤c":"ম্প","ç":"ম্ফ","¤^":"ম্ব","¤¢":"ম্ভ","¤£":"ম্ভ্র","¤§":"ম্ম","¤ø":"ম্ল","gø":"ম্ল","¤¬":"ম্ল","g¬":"ম্ল","¤ª":"ম্র","iƒ":"রূ","é":"ল্ক","ê":"ল্গ","ë":"ল্ট","ì":"ল্ড","í":"ল্প","î":"ল্ফ","j¦":"ল্ব","j¥":"ল্ম","jø":"ল্ল","j­":"ল্ল","kÖƒ":"শ্রূ","kªƒ":"শ্রূ","ï":"শু","ð":"শ্চ","ñ":"শ্ছ","kœ":"শ্ন","k¦":"শ্ব","k^":"শ্ব","k¥":"শ্ম","kø":"শ্ল","k¬":"শ্ল","k­":"শ্ল","®‹":"ষ্ক","®Œ":"ষ্ক্র","ó":"ষ্ট","ô":"ষ্ঠ","ò":"ষ্ণ","®ú":"ষ্প","®c":"ষ্প","õ":"ষ্ফ","®§":"ষ্ম","¯‹":"স্ক","¯y‹":"স্কু","÷":"স্ট","ö":"স্খ","¯Í":"স্ত","¯—":"স্ত","¯‘":"স্তু","¯¿":"স্ত্র","¯’":"স্থ","mœ":"স্ন","¯œ":"স্ন","¯ú":"স্প","ù":"স্ফ","¯ª":"স্র","¯^":"স্ব","¯§":"স্ম","mªƒ":"স্রূ","¯­":"স্ল","¯ø":"স্ল","mø":"স্ল","û":"হু","nŸ":"হ্ব","nè":"হ্ণ","ý":"হ্ন","n¬":"হ্ল","nƒ":"হৃ","ü":"হৃ","©":"র্","Av":"আ","A":"অ","B":"ই","C":"ঈ","D":"উ","E":"ঊ","F":"ঋ","G":"এ","H":"ঐ","I":"ও","J":"ঔ","K":"ক","L":"খ","M":"গ","N":"ঘ","O":"ঙ","P":"চ","Q":"ছ","R":"জ","S":"ঝ","T":"ঞ","U":"ট","V":"ঠ","W":"ড","X":"ঢ","Y":"ণ","Z":"ত","_":"থ","`":"দ","a":"ধ","b":"ন","c":"প","d":"ফ","e":"ব","f":"ভ","g":"ম","h":"য","i":"র","j":"ল","k":"শ","l":"ষ","m":"স","n":"হ","o":"ড়","p":"ঢ়","q":"য়","r":"ৎ","0":"০","1":"১","2":"২","3":"৩","4":"৪","5":"৫","6":"৬","7":"৭","8":"৮","9":"৯","v":"া","w":"ি","x":"ী","y":"ু","z":"ু","–":"ু","“":"ু","æ":"ু","~":"ূ","‚":"ূ","„":"ৃ","‡":"ে","†":"ে","‰":"ৈ","ˆ":"ৈ","Š":"ৗ","Ô":"‘","Õ":"’","|":"।","Ò":"“","Ó":"”","s":"ং","t":"ঃ","u":"ঁ","ª":"্র","Ö":"্র","«":"্র","¨":"্য","&":"্","…":"ৃ","Ñ":"—","\\":"॥"
+        "i¨": "র‌্য", "ª¨": "্র্য", "°": "ক্ক", "±": "ক্ট", "³": "ক্ত", "K¡": "ক্ব", "¯Œ": "স্ক্র", "µ": "ক্র", "K¬": "ক্ল", "¶è": "ক্ষ্ণ", "þ": "হ্ম", "²": "ক্ষ্ম", "ÿè": "ক্ষ্ম", "•¶": "ঙ্ক্ষ", "•ÿ": "ঙ্ক্ষ", "¶": "ক্ষ", "ÿ": "ক্ষ", "·": "ক্স", "´": "ক্ম", "¸": "গু", "»": "গ্ধ", "Mœ": "গ্ন", "M¥": "গ্ম", "MÖƒ": "গ্রূ", "Mø": "গ্ল", "M¬": "গ্ল", "M­": "গ্ল", "Nœ": "ঘ্ন", "¼": "ঙ্ক", "•L": "ঙ্খ", "½": "ঙ্গ", "•N": "ঙ্ঘ", "•": "ক্স", "”P": "চ্চ", "”Q¡": "চ্ছ্ব", "”Q": "চ্ছ", "”T": "চ্ঞ", "¾¡": "জ্জ্ব", "¾": "জ্জ", "À": "জ্ঝ", "Á": "জ্ঞ", "R¡": "জ্ব", "R¦": "জ্ব", "Â": "ঞ্চ", "Ã": "ঞ্ছ", "Ä": "ঞ্জ", "Å": "ঞ্ঝ", "Æ": "ট্ট", "U¡": "ট্ব", "U¥": "ট্ম", "Ç": "ড্ড", "È": "ণ্ট", "É": "ণ্ঠ", "Ý": "ন্স", "Ê": "ণ্ড", "Ð": "ণ্ড", "š‘": "ন্তু", "Y^": "ণ্ব", "Ë¡": "ত্ত্ব", "šÍ¡": "ন্ত্ব", "š—¡": "ন্ত্ব", "Ë": "ত্ত", "Ì": "ত্থ", "Z¥": "ত্ম", "Í": "ত্ম", "Z¡": "ত্ব", "Zœ": "ত্ন", "Î": "ত্র", "_¡": "থ্ব", "˜M": "দ্গ", "˜N": "দ্ঘ", "Ï": "দ্দ", "×": "দ্ধ", "›Ø": "ন্দ্ব", "˜¡": "দ্ব", "Ø": "দ্ব", "™£": "দ্ভ্র", "™¢": "দ্ভ", "Ù": "দ্ম", "`ªƒ": "দ্রূ", "aªƒ": "ধ্রূ", "aŸ": "ধ্ব", "a¥": "ধ্ম", "›U": "ন্ট", "Ú": "ন্ঠ", "Û": "ন্ড", "šÍ": "ন্ত", "š—": "ন্ত", "š¿": "ন্ত্র", "š’": "ন্থ", "›`": "ন্দ", "Ü": "ন্ধ", "Yœ": "ণ্ন", "Yè": "ণ্ন", "bœ": "ন্ন", "š^": "ন্ব", "b¥": "ন্ম", "š§": "ন্ম", "Þ": "প্ট", "ß": "প্ত", "cœ": "প্ন", "à": "প্প", "c¬": "প্ল", "cø": "প্ল", "c­": "প্ল", "á": "প্স", "cÖƒ": "প্রূ", "d¬": "ফ্ল", "â": "ব্জ", "ã": "ব্দ", "ä": "ব্ধ", "eŸ": "ব্ব", "e­": "ব্ল", "eø": "ব্ল", "eªƒ": "ব্রূ", "åƒ": "ভ্রূ", "å": "ভ্র", "f‚": "ভূ", "gœ": "ম্ন", "¤œ": "ম্ন", "¤ú": "ম্প", "¤c": "ম্প", "ç": "ম্ফ", "¤^": "ম্ব", "¤¢": "ম্ভ", "¤£": "ম্ভ্র", "¤§": "ম্ম", "¤ø": "ম্ল", "gø": "ম্ল", "¤¬": "ম্ল", "g¬": "ম্ল", "¤ª": "ম্র", "iƒ": "রূ", "é": "ল্ক", "ê": "ল্গ", "ë": "ল্ট", "ì": "ল্ড", "í": "ল্প", "î": "ল্ফ", "j¦": "ল্ব", "j¥": "ল্ম", "jø": "ল্ল", "j­": "ল্ল", "kÖƒ": "শ্রূ", "kªƒ": "শ্রূ", "ï": "শু", "ð": "শ্চ", "ñ": "শ্ছ", "kœ": "শ্ন", "k¦": "শ্ব", "k^": "শ্ব", "k¥": "শ্ম", "kø": "শ্ল", "k¬": "শ্ল", "k­": "শ্ল", "®‹": "ষ্ক", "®Œ": "ষ্ক্র", "ó": "ষ্ট", "ô": "ষ্ঠ", "ò": "ষ্ণ", "®ú": "ষ্প", "®c": "ষ্প", "õ": "ষ্ফ", "®§": "ষ্ম", "¯‹": "স্ক", "¯y‹": "স্কু", "÷": "স্ট", "ö": "স্খ", "¯Í": "স্ত", "¯—": "স্ত", "¯‘": "স্তু", "¯¿": "স্ত্র", "¯’": "স্থ", "mœ": "স্ন", "¯œ": "স্ন", "¯ú": "স্প", "ù": "স্ফ", "¯ª": "স্র", "¯^": "স্ব", "¯§": "স্ম", "mªƒ": "স্রূ", "¯­": "স্ল", "¯ø": "স্ল", "mø": "স্ল", "û": "হু", "nŸ": "হ্ব", "nè": "হ্ণ", "ý": "হ্ন", "n¬": "হ্ল", "nƒ": "হৃ", "ü": "হৃ", "©": "র্", "Av": "আ", "A": "অ", "B": "ই", "C": "ঈ", "D": "উ", "E": "ঊ", "F": "ঋ", "G": "এ", "H": "ঐ", "I": "ও", "J": "ঔ", "K": "ক", "L": "খ", "M": "গ", "N": "ঘ", "O": "ঙ", "P": "চ", "Q": "ছ", "R": "জ", "S": "ঝ", "T": "ঞ", "U": "ট", "V": "ঠ", "W": "ড", "X": "ঢ", "Y": "ণ", "Z": "ত", "_": "থ", "`": "দ", "a": "ধ", "b": "ন", "c": "প", "d": "ফ", "e": "ব", "f": "ভ", "g": "ম", "h": "য", "i": "র", "j": "ল", "k": "শ", "l": "ষ", "m": "স", "n": "হ", "o": "ড়", "p": "ঢ়", "q": "য়", "r": "ৎ", "0": "০", "1": "১", "2": "২", "3": "৩", "4": "৪", "5": "৫", "6": "৬", "7": "৭", "8": "৮", "9": "৯", "v": "া", "w": "ি", "x": "ী", "y": "ু", "z": "ু", "–": "ু", "“": "ু", "æ": "ু", "~": "ূ", "‚": "ূ", "„": "ৃ", "‡": "ে", "†": "ে", "‰": "ৈ", "ˆ": "ৈ", "Š": "ৗ", "Ô": "‘", "Õ": "’", "|": "।", "Ò": "“", "Ó": "”", "s": "ং", "t": "ঃ", "u": "ঁ", "ª": "্র", "Ö": "্র", "«": "্র", "¨": "্য", "&": "্", "…": "ৃ", "Ñ": "—", "\\": "॥"
     };
 
     var correctBijoy = { "&ª": "ª" };
     var correctUnicode = { "šত্ম": "ন্ত", "¯ত্ম": "স্ত" };
 
     var uni2bijoy_string_conversion_map = {
-        "।":"|","‘":"Ô","’":"Õ","“":"Ò","”":"Ó","্র্য":"ª¨","র‌্য":"i¨","ক্ক":"°","ক্ট":"±","ক্ত":"³","ক্ব":"K¡","স্ক্র":"¯Œ","ক্র":"µ","ক্ল":"K¬","ক্ষ্ন":"¶è","ক্ষ্ণ":"¶è","হ্ম":"þ","ক্ষ্ম":"²","ঙ্ক্ষ":"•¶","ক্ষ":"¶","ক্স":"·","ক্ম":"´","ঙ্গু":"½y","গু":"¸","গ্ধ":"»","গ্ন":"Mœ","গ্ম":"M¥","গ্লু":"Møæ","গ্ল":"Mø","গ্রু":"Mªæ","ঘ্ন":"Nœ","ঙ্ক":"¼","ঙ্খ":"•L","ঙ্গ":"½","ঙ্ঘ":"•N","চ্চ":"”P","চ্ছ":"”Q","চ্ছ্ব":"”Q¡","চ্ঞ":"”T","জ্জ্ব":"¾¡","জ্জ":"¾","জ্ঝ":"À","জ্ঞ":"Á","জ্ব":"R¡","ঞ্চ":"Â","ঞ্ছ":"Ã","ঞ্জ":"Ä","ঞ্ঝ":"Å","ট্ট":"Æ","ট্ব":"U¡","ট্ম":"U¥","ড্ড":"Ç","ণ্ট":"È","ণ্ঠ":"É","ন্স":"Ý","ণ্ড":"Ð","ন্তু":"š‘","ণ্ব":"Y^","ত্ত্ব":"Ë¡","ন্ত্ব":"šÍ¡","ত্ত":"Ë","ত্থ":"Ì","ত্ন":"Zœ","ত্ম":"Z¥","ত্ব":"Z¡","ত্রু":"Îæ","ত্রূ":"Îƒ","থ্ব":"_¡","দ্গ":"˜M","দ্ঘ":"˜N","দ্দ":"Ï","দ্ধ":"×","ন্দ্ব":"›Ø","দ্ব":"Ø","দ্ভ্র":"™£","দ্ভ":"™¢","দ্ম":"Ù","দ্রু":"`ªæ","শ্রু":"kÖæ","প্রু":"cÖæ","প্লু":"cøæ","ধ্ব":"aŸ","ধ্ম":"a¥","ন্ট":"›U","ন্ঠ":"Ú","ন্ড":"Û","ন্ত্র":"š¿","ন্ত":"šÍ","স্ত্র":"¯¿","ত্র":"Î","ন্থ":"š’","ন্দ":"›`","ন্ধ":"Ü","ণ্ণ":"Yœ","ণ্ন":"Yœ","ন্ন":"bœ","ন্ব":"š^","ন্ম":"b¥","প্ট":"Þ","প্ত":"ß","প্ন":"cœ","প্প":"à","প্ল":"cø","প্স":"á","ফ্ল":"d¬","ব্জ":"â","ব্দ":"ã","ব্ধ":"ä","ব্ব":"eŸ","ব্ল":"eø","ভ্র":"å","ম্ন":"gœ","ম্প":"¤ú","ম্ফ":"ç","ম্ব":"¤^","ম্ভ":"¤¢","ম্ভ্র":"¤£","ম্ম":"¤§","ম্ল":"¤ø","ড়ু":"o–","ঢ়ু":"p–","রু":"iæ","রূ":"iƒ","ল্ক":"é","ল্গ":"ê","ল্প":"í","ল্ট":"ë","ল্ড":"ì","ল্ফ":"î","ল্ব":"j¦","ল্ম":"j¥","ল্ল":"jø","শু":"ï","শ্চ":"ð","শ্ছ":"ñ","শ্ন":"kœ","শ্ব":"k¦","শ্ম":"k¥","শ্ল":"kø","ষ্ক":"®‹","ষ্ক্র":"®Œ","ষ্ট":"ó","ষ্ঠ":"ô","ষ্ণ":"ò","ষ্প":"®ú","ষ্ফ":"õ","ষ্ম":"®§","স্ক":"¯‹","স্ট":"÷","স্খ":"ö","স্তু":"¯‘","স্ত":"¯Í","স্থ":"¯’","স্ন":"mœ","স্প":"¯ú","স্ফ":"ù","স্ব":"¯^","স্ম":"¯§","স্ল":"¯ø","হ্ব":"nŸ","হু":"û","হ্ণ":"nè","হ্ন":"ý","হ্ল":"n¬","হৃ":"ü","র্":"©","্র":"ª","্য":"¨","্":"&","আ":"Av","অ":"A","ই":"B","ঈ":"C","উ":"D","ঊ":"E","ঋ":"F","এ":"G","ঐ":"H","ও":"I","ঔ":"J","ক":"K","খ":"L","গ":"M","ঘ":"N","ঙ":"O","চ":"P","ছ":"Q","জ":"R","ঝ":"S","ঞ":"T","ট":"U","ঠ":"V","ড":"W","ঢ":"X","ণ":"Y","ত":"Z","থ":"_","দ":"`","ধ":"a","ন":"b","প":"c","ফ":"d","ব":"e","ভ":"f","ম":"g","য":"h","র":"i","ল":"j","শ":"k","ষ":"l","স":"m","হ":"n","ড়":"o","ঢ়":"p","য়":"q","ৎ":"r","০":"0","১":"1","২":"2","৩":"3","৪":"4","৫":"5","৬":"6","৭":"7","৮":"8","৯":"9","া":"v","ি":"w","ী":"x","ু":"y","ূ":"~","…":"...","ৃ":"…","ে":"‡","ৈ":"‰","ৗ":"Š","ং":"s","ঃ":"t","ঁ":"u","—":"Ñ","॥":"\\"
+        "।": "|", "‘": "Ô", "’": "Õ", "“": "Ò", "”": "Ó", "্র্য": "ª¨", "র‌্য": "i¨", "ক্ক": "°", "ক্ট": "±", "ক্ত": "³", "ক্ব": "K¡", "স্ক্র": "¯Œ", "ক্র": "µ", "ক্ল": "K¬", "ক্ষ্ন": "¶è", "ক্ষ্ণ": "¶è", "হ্ম": "þ", "ক্ষ্ম": "²", "ঙ্ক্ষ": "•¶", "ক্ষ": "¶", "ক্স": "·", "ক্ম": "´", "ঙ্গু": "½y", "গু": "¸", "গ্ধ": "»", "গ্ন": "Mœ", "গ্ম": "M¥", "গ্লু": "Møæ", "গ্ল": "Mø", "গ্রু": "Mªæ", "ঘ্ন": "Nœ", "ঙ্ক": "¼", "ঙ্খ": "•L", "ঙ্গ": "½", "ঙ্ঘ": "•N", "চ্চ": "”P", "চ্ছ": "”Q", "চ্ছ্ব": "”Q¡", "চ্ঞ": "”T", "জ্জ্ব": "¾¡", "জ্জ": "¾", "জ্ঝ": "À", "জ্ঞ": "Á", "জ্ব": "R¡", "ঞ্চ": "Â", "ঞ্ছ": "Ã", "ঞ্জ": "Ä", "ঞ্ঝ": "Å", "ট্ট": "Æ", "ট্ব": "U¡", "ট্ম": "U¥", "ড্ড": "Ç", "ণ্ট": "È", "ণ্ঠ": "É", "ন্স": "Ý", "ণ্ড": "Ð", "ন্তু": "š‘", "ণ্ব": "Y^", "ত্ত্ব": "Ë¡", "ন্ত্ব": "šÍ¡", "ত্ত": "Ë", "ত্থ": "Ì", "ত্ন": "Zœ", "ত্ম": "Z¥", "ত্ব": "Z¡", "ত্রু": "Îæ", "ত্রূ": "Îƒ", "থ্ব": "_¡", "দ্গ": "˜M", "দ্ঘ": "˜N", "দ্দ": "Ï", "দ্ধ": "×", "ন্দ্ব": "›Ø", "দ্ব": "Ø", "দ্ভ্র": "™£", "দ্ভ": "™¢", "দ্ম": "Ù", "দ্রু": "`ªæ", "শ্রু": "kÖæ", "প্রু": "cÖæ", "প্লু": "cøæ", "ধ্ব": "aŸ", "ধ্ম": "a¥", "ন্ট": "›U", "ন্ঠ": "Ú", "ন্ড": "Û", "ন্ত্র": "š¿", "ন্ত": "šÍ", "স্ত্র": "¯¿", "ত্র": "Î", "ন্থ": "š’", "ন্দ": "›`", "ন্ধ": "Ü", "ণ্ণ": "Yœ", "ণ্ন": "Yœ", "ন্ন": "bœ", "ন্ব": "š^", "ন্ম": "b¥", "প্ট": "Þ", "প্ত": "ß", "প্ন": "cœ", "প্প": "à", "প্ল": "cø", "প্স": "á", "ফ্ল": "d¬", "ব্জ": "â", "ব্দ": "ã", "ব্ধ": "ä", "ব্ব": "eŸ", "ব্ল": "eø", "ভ্র": "å", "ম্ন": "gœ", "ম্প": "¤ú", "ম্ফ": "ç", "ম্ব": "¤^", "ম্ভ": "¤¢", "ম্ভ্র": "¤£", "ম্ম": "¤§", "ম্ল": "¤ø", "ড়ু": "o–", "ঢ়ু": "p–", "রু": "iæ", "রূ": "iƒ", "ল্ক": "é", "ল্গ": "ê", "ল্প": "í", "ল্ট": "ë", "ল্ড": "ì", "ল্ফ": "î", "ল্ব": "j¦", "ল্ম": "j¥", "ল্ল": "jø", "শু": "ï", "শ্চ": "ð", "শ্ছ": "ñ", "শ্ন": "kœ", "শ্ব": "k¦", "শ্ম": "k¥", "শ্ল": "kø", "ষ্ক": "®‹", "ষ্ক্র": "®Œ", "ষ্ট": "ó", "ষ্ঠ": "ô", "ষ্ণ": "ò", "ষ্প": "®ú", "ষ্ফ": "õ", "ষ্ম": "®§", "স্ক": "¯‹", "স্ট": "÷", "স্খ": "ö", "স্তু": "¯‘", "স্ত": "¯Í", "স্থ": "¯’", "স্ন": "mœ", "স্প": "¯ú", "স্ফ": "ù", "স্ব": "¯^", "স্ম": "¯§", "স্ল": "¯ø", "হ্ব": "nŸ", "হু": "û", "হ্ণ": "nè", "হ্ন": "ý", "হ্ল": "n¬", "হৃ": "ü", "র্": "©", "্র": "ª", "্য": "¨", "্": "&", "আ": "Av", "অ": "A", "ই": "B", "ঈ": "C", "উ": "D", "ঊ": "E", "ঋ": "F", "এ": "G", "ঐ": "H", "ও": "I", "ঔ": "J", "ক": "K", "খ": "L", "গ": "M", "ঘ": "N", "ঙ": "O", "চ": "P", "ছ": "Q", "জ": "R", "ঝ": "S", "ঞ": "T", "ট": "U", "ঠ": "V", "ড": "W", "ঢ": "X", "ণ": "Y", "ত": "Z", "থ": "_", "দ": "`", "ধ": "a", "ন": "b", "প": "c", "ফ": "d", "ব": "e", "ভ": "f", "ম": "g", "য": "h", "র": "i", "ল": "j", "শ": "k", "ষ": "l", "স": "m", "হ": "n", "ড়": "o", "ঢ়": "p", "য়": "q", "ৎ": "r", "০": "0", "১": "1", "২": "2", "৩": "3", "৪": "4", "৫": "5", "৬": "6", "৭": "7", "৮": "8", "৯": "9", "া": "v", "ি": "w", "ী": "x", "ু": "y", "ূ": "~", "…": "...", "ৃ": "…", "ে": "‡", "ৈ": "‰", "ৗ": "Š", "ং": "s", "ঃ": "t", "ঁ": "u", "—": "Ñ", "॥": "\\"
     };
 
     var bijoyKarReplacements = {
-        "¨y":"y¨","¨~":"~¨","vu":"uv","¨u":"u¨","Ky":"Kz","K~":"K‚","Py":"Pz","P~":"P‚","Qy":"Qz","Q~":"Q‚","Sy":"Sz","S~":"S‚","Uy":"Uz","U~":"U‚","Vy":"Vz","V~":"V‚","Wy":"Wz","W~":"W‚","Xy":"Xz","X~":"X‚","Zy":"Zz","Z~":"Z‚","dy":"dz","d~":"d‚","fy":"fz","f~":"f‚","¶y":"¶z","¶~":"¶‚","Áy":"Áz","Á~":"Á‚","þy":"þz","þ~":"þ‚","¾y":"¾z","¾~":"¾‚","°y":"°z","°~":"°‚","¼y":"¼z","¼~":"¼‚","Üy":"Üz","Ü~":"Ü‚","×y":"×z","×~":"x‚","äy":"äz","ä~":"ä‚","§…":"§„","¥…":"¥„","c…":"c„","N…":"N„","g…":"g„","e…":"e„","k…":"k„","L…":"L„","M…":"M„","m…":"m„","l…":"l„","R…":"R„","_…":"_„","`…":"`„","a…":"a„","b…":"b„","j…":"j„","h…":"h„","Y…":"Y„","j&¸":"êy","'‡":"'†","\"‡":'\"†',"{‡":"{†","-‡":"-†","'‰":"'ˆ","\"‰":'\"ˆ',"{‰":"{ˆ","-‰":"-ˆ","©y":"©z","©~":"©‚","‹y":"‹z","‹~":"‹‚","÷y":"÷z","÷~":"÷‚","ùy":"ùz","ù~":"ù‚"
+        "¨y": "y¨", "¨~": "~¨", "vu": "uv", "¨u": "u¨", "Ky": "Kz", "K~": "K‚", "Py": "Pz", "P~": "P‚", "Qy": "Qz", "Q~": "Q‚", "Sy": "Sz", "S~": "S‚", "Uy": "Uz", "U~": "U‚", "Vy": "Vz", "V~": "V‚", "Wy": "Wz", "W~": "W‚", "Xy": "Xz", "X~": "X‚", "Zy": "Zz", "Z~": "Z‚", "dy": "dz", "d~": "d‚", "fy": "fz", "f~": "f‚", "¶y": "¶z", "¶~": "¶‚", "Áy": "Áz", "Á~": "Á‚", "þy": "þz", "þ~": "þ‚", "¾y": "¾z", "¾~": "¾‚", "°y": "°z", "°~": "°‚", "¼y": "¼z", "¼~": "¼‚", "Üy": "Üz", "Ü~": "Ü‚", "×y": "×z", "×~": "x‚", "äy": "äz", "ä~": "ä‚", "§…": "§„", "¥…": "¥„", "c…": "c„", "N…": "N„", "g…": "g„", "e…": "e„", "k…": "k„", "L…": "L„", "M…": "M„", "m…": "m„", "l…": "l„", "R…": "R„", "_…": "_„", "`…": "`„", "a…": "a„", "b…": "b„", "j…": "j„", "h…": "h„", "Y…": "Y„", "j&¸": "êy", "'‡": "'†", "\"‡": '\"†', "{‡": "{†", "-‡": "-†", "'‰": "'ˆ", "\"‰": '\"ˆ', "{‰": "{ˆ", "-‰": "-ˆ", "©y": "©z", "©~": "©‚", "‹y": "‹z", "‹~": "‹‚", "÷y": "÷z", "÷~": "÷‚", "ùy": "ùz", "ù~": "ù‚"
     };
 
     var bijoyRoFolaReplacements = {
-        "&iæ":"ªæ","&iƒ":"ªƒ","Mª":"MÖ","cª":"cÖ","dª":"d«","Nªæ":"Nªy","Pªæ":"Pªy","Qªæ":"Qªy","Sªæ":"Sªy","Uªæ":"Uªy","Vªæ":"Vªy","Wªæ":"Wªy","Xªæ":"Xªy","Yªæ":"Yªy","bªæ":"bªy","d«æ":"d«y","hªæ":"hªy","jªæ":"jªy","lªæ":"lªy","nªæ":"nªy","åy":"åæ","Nªƒ":"Nª~","Pªƒ":"Pª~","Qªƒ":"Qª~","Sªƒ":"Sª~","Uªƒ":"Uª~","Vªƒ":"Vª~","Wªƒ":"Wª~","Xªƒ":"Xª~","Yªƒ":"Yª~","bªƒ":"bª~","d«ƒ":"d«~","hªƒ":"hª~","jªƒ":"jª~","lªƒ":"lª~","nªƒ":"nª~","å~":"åƒ","”Q&e":"”Q¡","kª":"kÖ","mª":"mÖ","g&å":"¤£"
+        "&iæ": "ªæ", "&iƒ": "ªƒ", "Mª": "MÖ", "cª": "cÖ", "dª": "d«", "Nªæ": "Nªy", "Pªæ": "Pªy", "Qªæ": "Qªy", "Sªæ": "Sªy", "Uªæ": "Uªy", "Vªæ": "Vªy", "Wªæ": "Wªy", "Xªæ": "Xªy", "Yªæ": "Yªy", "bªæ": "bªy", "d«æ": "d«y", "hªæ": "hªy", "jªæ": "jªy", "lªæ": "lªy", "nªæ": "nªy", "åy": "åæ", "Nªƒ": "Nª~", "Pªƒ": "Pª~", "Qªƒ": "Qª~", "Sªƒ": "Sª~", "Uªƒ": "Uª~", "Vªƒ": "Vª~", "Wªƒ": "Wª~", "Xªƒ": "Xª~", "Yªƒ": "Yª~", "bªƒ": "bª~", "d«ƒ": "d«~", "hªƒ": "hª~", "jªƒ": "jª~", "lªƒ": "lª~", "nªƒ": "nª~", "å~": "åƒ", "”Q&e": "”Q¡", "kª": "kÖ", "mª": "mÖ", "g&å": "¤£"
     };
 
     var bijoyPatterns = buildConversionPatterns(bijoy_string_conversion_map);
@@ -247,93 +244,93 @@
 
     // --- High-Grade English & Mixed Text Intelligence Engine ---
     var ENGLISH_WORDS = [
-        'a','about','above','across','action','activity','actually','add','address','administration','adult',
-        'after','again','against','age','agency','agent','ago','agree','agreement','ahead','air','all','allow',
-        'almost','alone','along','already','also','although','always','american','among','amount','analysis',
-        'and','animal','another','answer','any','anyone','anything','appear','apply','approach','area','argue',
-        'arm','around','arrive','art','article','artist','as','ask','assume','at','attack','attention','attorney',
-        'audience','author','authority','available','avoid','away','baby','back','bad','bag','ball','bank','bar',
-        'base','be','beat','beautiful','because','become','bed','before','begin','behavior','behind','believe',
-        'benefit','best','better','between','beyond','big','bill','billion','bit','black','blood','blue','board',
-        'body','book','born','both','box','boy','break','bring','brother','budget','build','building','business',
-        'but','buy','by','call','camera','campaign','can','cancer','candidate','capital','car','card','care',
-        'career','carry','case','catch','cause','cell','center','central','century','certain','certainly','chair',
-        'challenge','chance','change','character','charge','check','child','choice','choose','church','citizen',
-        'city','civil','claim','class','clear','clearly','close','coach','cold','collection','college','color',
-        'come','commercial','common','community','company','compare','computer','concern','condition','conference',
-        'congress','consider','consumer','contain','continue','control','cost','could','country','couple','course',
-        'court','cover','create','crime','cultural','culture','cup','current','customer','cut','dark','data',
-        'daughter','day','dead','deal','death','debate','decade','decide','decision','deep','defense','degree',
-        'democrat','democratic','describe','design','designer','despite','detail','determine','develop','development',
-        'die','difference','different','difficult','dinner','direction','director','discover','discuss','discussion',
-        'disease','do','doctor','dog','door','down','draw','dream','drive','drop','drug','during','each','early',
-        'east','easy','eat','economic','economy','edge','education','effect','effort','eight','either','election',
-        'else','email','employee','end','energy','english','enjoy','enough','enter','entire','environment','environmental',
-        'especially','establish','even','evening','event','ever','every','everybody','everyone','everything',
-        'evidence','exactly','example','executive','exist','expect','experience','expert','explain','eye','face',
-        'fact','factor','fail','fall','family','far','fast','father','fear','feature','federal','feel','feeling',
-        'few','field','fight','figure','fill','film','final','finally','financial','find','fine','finger','finish',
-        'fire','firm','first','fish','five','floor','fly','focus','follow','food','foot','for','force','foreign',
-        'forget','form','former','forward','four','free','friend','from','front','full','fund','future','game',
-        'garden','gas','general','generation','get','girl','give','glass','go','goal','good','government','great',
-        'green','ground','group','grow','growth','guess','gun','guy','hair','half','hand','hang','happen','happy',
-        'hard','have','he','head','health','hear','heart','heat','heavy','help','her','here','herself','high',
-        'him','himself','his','history','hit','hold','home','hope','hospital','hot','hotel','hour','house','how',
-        'however','huge','human','hundred','husband','i','idea','identify','if','image','imagine','impact','important',
-        'improve','in','include','including','increase','indeed','indicate','individual','industry','information',
-        'inside','instead','institution','interest','interesting','international','interview','into','investment',
-        'involve','issue','it','item','its','itself','job','join','just','keep','key','kid','kill','kind','kitchen',
-        'know','knowledge','land','language','large','last','late','later','laugh','law','lawyer','lay','lead',
-        'leader','learn','least','leave','left','leg','legal','less','let','letter','level','lie','life','light',
-        'like','likely','line','list','listen','little','live','local','long','look','lose','loss','lot','love',
-        'low','machine','magazine','main','maintain','major','majority','make','man','manage','management','manager',
-        'many','market','marriage','material','matter','may','maybe','me','mean','measure','media','medical','meet',
-        'meeting','member','memory','mention','message','method','middle','might','military','million','mind','minute',
-        'miss','mission','model','modern','moment','money','month','more','morning','most','mother','mouth','move',
-        'movement','movie','mr','mrs','much','music','must','my','myself','name','nation','national','natural',
-        'nature','near','nearly','necessary','need','network','never','new','news','newspaper','next','nice','night',
-        'no','none','nor','north','not','note','nothing','notice','now','number','occur','of','off','offer','office',
-        'officer','official','often','oh','oil','ok','okay','old','on','once','one','only','onto','open','operation',
-        'opportunity','option','or','order','organization','other','others','our','ourselves','out','outside','over',
-        'own','owner','page','pain','painting','paper','parent','part','participant','particular','particularly',
-        'partner','party','pass','past','patient','pattern','pay','peace','people','per','perform','performance',
-        'perhaps','period','person','personal','phone','physical','pick','picture','piece','place','plan','plant',
-        'play','player','pm','point','police','policy','political','politics','poor','popular','population','position',
-        'positive','possible','power','practice','prepare','present','president','pressure','pretty','prevent','price',
-        'private','probably','problem','process','produce','product','production','profession','professional','professor',
-        'program','project','property','protect','prove','provide','public','pull','purpose','push','put','quality',
-        'question','quickly','quite','race','radio','raise','range','rate','rather','reach','read','ready','real',
-        'reality','realize','really','reason','receive','recent','recently','recognize','record','red','reduce',
-        'reflect','region','relate','relationship','religious','remain','remember','remove','report','represent',
-        'republican','require','research','resource','respond','response','responsibility','rest','result','return',
-        'reveal','rich','right','rise','risk','road','rock','role','room','rule','run','safe','same','save','say',
-        'scene','school','science','scientist','score','sea','season','seat','second','section','security','see',
-        'seek','seem','sell','send','senior','sense','series','serious','serve','service','set','seven','several',
-        'sex','sexual','shake','share','she','shoot','short','shot','should','shoulder','show','side','sign',
-        'significant','similar','simple','simply','since','sing','single','sister','sit','site','situation','six',
-        'size','skill','skin','small','smile','so','social','society','soldier','some','somebody','someone','something',
-        'sometimes','son','song','soon','sort','sound','source','south','southern','space','speak','special','specific',
-        'speech','spend','sport','spring','staff','stage','stand','standard','star','start','state','statement','station',
-        'stay','step','still','stock','stop','store','story','strategy','street','strong','structure','student','study',
-        'stuff','style','subject','success','successful','such','suddenly','suffer','suggest','summer','support','sure',
-        'surface','system','table','take','talk','task','tax','teach','teacher','team','technology','television','tell',
-        'ten','tend','term','test','text','than','thank','thanks','that','the','their','them','themselves','then',
-        'theory','there','these','they','thing','think','third','this','those','though','thought','thousand','threat',
-        'three','through','throughout','throw','thus','time','to','today','together','tonight','too','top','total',
-        'tough','toward','towards','town','trade','traditional','training','travel','treat','treatment','tree','trial',
-        'trip','trouble','true','truth','try','turn','tv','two','type','under','understand','unit','until','up',
-        'upon','us','use','user','usually','value','various','very','victim','view','violence','visit','voice','vote',
-        'wait','walk','wall','want','war','watch','water','way','we','weapon','wear','week','weight','well','west',
-        'western','what','whatever','when','where','whether','which','while','white','who','whole','whom','whose','why',
-        'wide','wife','will','win','wind','window','wish','with','within','without','woman','wonder','word','work',
-        'worker','world','worry','would','write','writer','wrong','yard','yeah','year','yes','yet','you','young',
-        'your','yourself',
-        'bangladesh','dhaka','bengali','bangla','abdullah','siam','al','gmail','yahoo','hotmail','outlook','facebook',
-        'google','youtube','instagram','twitter','whatsapp','telegram','website','web','site','app','software',
-        'developer','engineer','graphic','designer','frontend','backend','fullstack','ui','ux','login','signup',
-        'online','offline','internet','network','server','client','browser','mobile','desktop','tablet','laptop',
-        'code','coding','python','javascript','java','html','css','php','react','vue','angular','node','sql',
-        'link','click','button','input','output','image','photo','video','audio','media','file','download','upload'
+        'a', 'about', 'above', 'across', 'action', 'activity', 'actually', 'add', 'address', 'administration', 'adult',
+        'after', 'again', 'against', 'age', 'agency', 'agent', 'ago', 'agree', 'agreement', 'ahead', 'air', 'all', 'allow',
+        'almost', 'alone', 'along', 'already', 'also', 'although', 'always', 'american', 'among', 'amount', 'analysis',
+        'and', 'animal', 'another', 'answer', 'any', 'anyone', 'anything', 'appear', 'apply', 'approach', 'area', 'argue',
+        'arm', 'around', 'arrive', 'art', 'article', 'artist', 'as', 'ask', 'assume', 'at', 'attack', 'attention', 'attorney',
+        'audience', 'author', 'authority', 'available', 'avoid', 'away', 'baby', 'back', 'bad', 'bag', 'ball', 'bank', 'bar',
+        'base', 'be', 'beat', 'beautiful', 'because', 'become', 'bed', 'before', 'begin', 'behavior', 'behind', 'believe',
+        'benefit', 'best', 'better', 'between', 'beyond', 'big', 'bill', 'billion', 'bit', 'black', 'blood', 'blue', 'board',
+        'body', 'book', 'born', 'both', 'box', 'boy', 'break', 'bring', 'brother', 'budget', 'build', 'building', 'business',
+        'but', 'buy', 'by', 'call', 'camera', 'campaign', 'can', 'cancer', 'candidate', 'capital', 'car', 'card', 'care',
+        'career', 'carry', 'case', 'catch', 'cause', 'cell', 'center', 'central', 'century', 'certain', 'certainly', 'chair',
+        'challenge', 'chance', 'change', 'character', 'charge', 'check', 'child', 'choice', 'choose', 'church', 'citizen',
+        'city', 'civil', 'claim', 'class', 'clear', 'clearly', 'close', 'coach', 'cold', 'collection', 'college', 'color',
+        'come', 'commercial', 'common', 'community', 'company', 'compare', 'computer', 'concern', 'condition', 'conference',
+        'congress', 'consider', 'consumer', 'contain', 'continue', 'control', 'cost', 'could', 'country', 'couple', 'course',
+        'court', 'cover', 'create', 'crime', 'cultural', 'culture', 'cup', 'current', 'customer', 'cut', 'dark', 'data',
+        'daughter', 'day', 'dead', 'deal', 'death', 'debate', 'decade', 'decide', 'decision', 'deep', 'defense', 'degree',
+        'democrat', 'democratic', 'describe', 'design', 'designer', 'despite', 'detail', 'determine', 'develop', 'development',
+        'die', 'difference', 'different', 'difficult', 'dinner', 'direction', 'director', 'discover', 'discuss', 'discussion',
+        'disease', 'do', 'doctor', 'dog', 'door', 'down', 'draw', 'dream', 'drive', 'drop', 'drug', 'during', 'each', 'early',
+        'east', 'easy', 'eat', 'economic', 'economy', 'edge', 'education', 'effect', 'effort', 'eight', 'either', 'election',
+        'else', 'email', 'employee', 'end', 'energy', 'english', 'enjoy', 'enough', 'enter', 'entire', 'environment', 'environmental',
+        'especially', 'establish', 'even', 'evening', 'event', 'ever', 'every', 'everybody', 'everyone', 'everything',
+        'evidence', 'exactly', 'example', 'executive', 'exist', 'expect', 'experience', 'expert', 'explain', 'eye', 'face',
+        'fact', 'factor', 'fail', 'fall', 'family', 'far', 'fast', 'father', 'fear', 'feature', 'federal', 'feel', 'feeling',
+        'few', 'field', 'fight', 'figure', 'fill', 'film', 'final', 'finally', 'financial', 'find', 'fine', 'finger', 'finish',
+        'fire', 'firm', 'first', 'fish', 'five', 'floor', 'fly', 'focus', 'follow', 'food', 'foot', 'for', 'force', 'foreign',
+        'forget', 'form', 'former', 'forward', 'four', 'free', 'friend', 'from', 'front', 'full', 'fund', 'future', 'game',
+        'garden', 'gas', 'general', 'generation', 'get', 'girl', 'give', 'glass', 'go', 'goal', 'good', 'government', 'great',
+        'green', 'ground', 'group', 'grow', 'growth', 'guess', 'gun', 'guy', 'hair', 'half', 'hand', 'hang', 'happen', 'happy',
+        'hard', 'have', 'he', 'head', 'health', 'hear', 'heart', 'heat', 'heavy', 'help', 'her', 'here', 'herself', 'high',
+        'him', 'himself', 'his', 'history', 'hit', 'hold', 'home', 'hope', 'hospital', 'hot', 'hotel', 'hour', 'house', 'how',
+        'however', 'huge', 'human', 'hundred', 'husband', 'i', 'idea', 'identify', 'if', 'image', 'imagine', 'impact', 'important',
+        'improve', 'in', 'include', 'including', 'increase', 'indeed', 'indicate', 'individual', 'industry', 'information',
+        'inside', 'instead', 'institution', 'interest', 'interesting', 'international', 'interview', 'into', 'investment',
+        'involve', 'issue', 'it', 'item', 'its', 'itself', 'job', 'join', 'just', 'keep', 'key', 'kid', 'kill', 'kind', 'kitchen',
+        'know', 'knowledge', 'land', 'language', 'large', 'last', 'late', 'later', 'laugh', 'law', 'lawyer', 'lay', 'lead',
+        'leader', 'learn', 'least', 'leave', 'left', 'leg', 'legal', 'less', 'let', 'letter', 'level', 'lie', 'life', 'light',
+        'like', 'likely', 'line', 'list', 'listen', 'little', 'live', 'local', 'long', 'look', 'lose', 'loss', 'lot', 'love',
+        'low', 'machine', 'magazine', 'main', 'maintain', 'major', 'majority', 'make', 'man', 'manage', 'management', 'manager',
+        'many', 'market', 'marriage', 'material', 'matter', 'may', 'maybe', 'me', 'mean', 'measure', 'media', 'medical', 'meet',
+        'meeting', 'member', 'memory', 'mention', 'message', 'method', 'middle', 'might', 'military', 'million', 'mind', 'minute',
+        'miss', 'mission', 'model', 'modern', 'moment', 'money', 'month', 'more', 'morning', 'most', 'mother', 'mouth', 'move',
+        'movement', 'movie', 'mr', 'mrs', 'much', 'music', 'must', 'my', 'myself', 'name', 'nation', 'national', 'natural',
+        'nature', 'near', 'nearly', 'necessary', 'need', 'network', 'never', 'new', 'news', 'newspaper', 'next', 'nice', 'night',
+        'no', 'none', 'nor', 'north', 'not', 'note', 'nothing', 'notice', 'now', 'number', 'occur', 'of', 'off', 'offer', 'office',
+        'officer', 'official', 'often', 'oh', 'oil', 'ok', 'okay', 'old', 'on', 'once', 'one', 'only', 'onto', 'open', 'operation',
+        'opportunity', 'option', 'or', 'order', 'organization', 'other', 'others', 'our', 'ourselves', 'out', 'outside', 'over',
+        'own', 'owner', 'page', 'pain', 'painting', 'paper', 'parent', 'part', 'participant', 'particular', 'particularly',
+        'partner', 'party', 'pass', 'past', 'patient', 'pattern', 'pay', 'peace', 'people', 'per', 'perform', 'performance',
+        'perhaps', 'period', 'person', 'personal', 'phone', 'physical', 'pick', 'picture', 'piece', 'place', 'plan', 'plant',
+        'play', 'player', 'pm', 'point', 'police', 'policy', 'political', 'politics', 'poor', 'popular', 'population', 'position',
+        'positive', 'possible', 'power', 'practice', 'prepare', 'present', 'president', 'pressure', 'pretty', 'prevent', 'price',
+        'private', 'probably', 'problem', 'process', 'produce', 'product', 'production', 'profession', 'professional', 'professor',
+        'program', 'project', 'property', 'protect', 'prove', 'provide', 'public', 'pull', 'purpose', 'push', 'put', 'quality',
+        'question', 'quickly', 'quite', 'race', 'radio', 'raise', 'range', 'rate', 'rather', 'reach', 'read', 'ready', 'real',
+        'reality', 'realize', 'really', 'reason', 'receive', 'recent', 'recently', 'recognize', 'record', 'red', 'reduce',
+        'reflect', 'region', 'relate', 'relationship', 'religious', 'remain', 'remember', 'remove', 'report', 'represent',
+        'republican', 'require', 'research', 'resource', 'respond', 'response', 'responsibility', 'rest', 'result', 'return',
+        'reveal', 'rich', 'right', 'rise', 'risk', 'road', 'rock', 'role', 'room', 'rule', 'run', 'safe', 'same', 'save', 'say',
+        'scene', 'school', 'science', 'scientist', 'score', 'sea', 'season', 'seat', 'second', 'section', 'security', 'see',
+        'seek', 'seem', 'sell', 'send', 'senior', 'sense', 'series', 'serious', 'serve', 'service', 'set', 'seven', 'several',
+        'sex', 'sexual', 'shake', 'share', 'she', 'shoot', 'short', 'shot', 'should', 'shoulder', 'show', 'side', 'sign',
+        'significant', 'similar', 'simple', 'simply', 'since', 'sing', 'single', 'sister', 'sit', 'site', 'situation', 'six',
+        'size', 'skill', 'skin', 'small', 'smile', 'so', 'social', 'society', 'soldier', 'some', 'somebody', 'someone', 'something',
+        'sometimes', 'son', 'song', 'soon', 'sort', 'sound', 'source', 'south', 'southern', 'space', 'speak', 'special', 'specific',
+        'speech', 'spend', 'sport', 'spring', 'staff', 'stage', 'stand', 'standard', 'star', 'start', 'state', 'statement', 'station',
+        'stay', 'step', 'still', 'stock', 'stop', 'store', 'story', 'strategy', 'street', 'strong', 'structure', 'student', 'study',
+        'stuff', 'style', 'subject', 'success', 'successful', 'such', 'suddenly', 'suffer', 'suggest', 'summer', 'support', 'sure',
+        'surface', 'system', 'table', 'take', 'talk', 'task', 'tax', 'teach', 'teacher', 'team', 'technology', 'television', 'tell',
+        'ten', 'tend', 'term', 'test', 'text', 'than', 'thank', 'thanks', 'that', 'the', 'their', 'them', 'themselves', 'then',
+        'theory', 'there', 'these', 'they', 'thing', 'think', 'third', 'this', 'those', 'though', 'thought', 'thousand', 'threat',
+        'three', 'through', 'throughout', 'throw', 'thus', 'time', 'to', 'today', 'together', 'tonight', 'too', 'top', 'total',
+        'tough', 'toward', 'towards', 'town', 'trade', 'traditional', 'training', 'travel', 'treat', 'treatment', 'tree', 'trial',
+        'trip', 'trouble', 'true', 'truth', 'try', 'turn', 'tv', 'two', 'type', 'under', 'understand', 'unit', 'until', 'up',
+        'upon', 'us', 'use', 'user', 'usually', 'value', 'various', 'very', 'victim', 'view', 'violence', 'visit', 'voice', 'vote',
+        'wait', 'walk', 'wall', 'want', 'war', 'watch', 'water', 'way', 'we', 'weapon', 'wear', 'week', 'weight', 'well', 'west',
+        'western', 'what', 'whatever', 'when', 'where', 'whether', 'which', 'while', 'white', 'who', 'whole', 'whom', 'whose', 'why',
+        'wide', 'wife', 'will', 'win', 'wind', 'window', 'wish', 'with', 'within', 'without', 'woman', 'wonder', 'word', 'work',
+        'worker', 'world', 'worry', 'would', 'write', 'writer', 'wrong', 'yard', 'yeah', 'year', 'yes', 'yet', 'you', 'young',
+        'your', 'yourself',
+        'bangladesh', 'dhaka', 'bengali', 'bangla', 'abdullah', 'siam', 'al', 'gmail', 'yahoo', 'hotmail', 'outlook', 'facebook',
+        'google', 'youtube', 'instagram', 'twitter', 'whatsapp', 'telegram', 'website', 'web', 'site', 'app', 'software',
+        'developer', 'engineer', 'graphic', 'designer', 'frontend', 'backend', 'fullstack', 'ui', 'ux', 'login', 'signup',
+        'online', 'offline', 'internet', 'network', 'server', 'client', 'browser', 'mobile', 'desktop', 'tablet', 'laptop',
+        'code', 'coding', 'python', 'javascript', 'java', 'html', 'css', 'php', 'react', 'vue', 'angular', 'node', 'sql',
+        'link', 'click', 'button', 'input', 'output', 'image', 'photo', 'video', 'audio', 'media', 'file', 'download', 'upload'
     ];
 
     var ENGLISH_DICT = {};
