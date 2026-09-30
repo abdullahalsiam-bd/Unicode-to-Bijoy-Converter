@@ -1,4 +1,4 @@
-# 🇧🇩 Unicode <-> Bijoy Converter
+# 🇧🇩 Bijoy <-> Unicode Converter
 
 <div align="center">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
@@ -42,44 +42,28 @@ While there are many Bijoy/Unicode converters on the internet, most of them suff
 
 The application uses an intuitive side-by-side (or stacked on mobile) workflow:
 
-`	ext
+```text
 ┌─────────────────────────────┐     ┌─────────────────────────────┐
-│ Unicode / অভ্র (Avro)       │     │ Bijoy / বিজয় (SutonnyMJ)   │
+│   Unicode / অভ্র (Avro)     │     │   Bijoy / বিজয় (SutonnyMJ)  │
 │                             │     │                             │
 │       Input Text            │  →  │       Converted Text        │
 │                             │  ←  │                             │
 └─────────────────────────────┘     └─────────────────────────────┘
-`
-Simply paste your text into the corresponding box, and press the convert button (or hit Ctrl+Enter). 
+```
+Simply paste your text into the corresponding box, and press the convert button (or hit `Ctrl+Enter`). 
 
 ## 🚀 Getting Started
 
-### 1. Clone the repository
+This is a completely frontend web application. No build steps, no backend, and no dependencies are required.
 
-`ash
-git clone https://github.com/YOUR-USERNAME/bijoy-unicode-converter.git
-cd bijoy-unicode-converter
-`
+1. **Download the project** as a ZIP file and extract it.
+2. Open the folder and double-click `index.html` to run it directly in your browser.
 
-### 2. Run Locally
-
-Because it's a completely frontend application, no build steps are required. You can simply double-click index.html to open it in your browser. 
-
-For the best experience (to avoid strict CORS issues with local files), use a local server:
-
-`ash
-# Using Python
-python -m http.server 8000
-
-# OR using Node.js
-npx serve .
-`
-
-Then visit http://localhost:8000 in your browser.
+*Note: For the best experience (to avoid strict CORS issues if you add more local resources in the future), you can use a local server like `python -m http.server`.*
 
 ## 📁 Project Structure
 
-`	ext
+```text
 bijoy-unicode-converter/
 │
 ├── index.html        # Main Application UI
@@ -88,11 +72,11 @@ bijoy-unicode-converter/
 ├── js/
 │   └── engine.js     # The core conversion engine & logic
 └── README.md
-`
+```
 
 ## 🔐 Privacy by Design
 
-This application is strictly **client-side**. All text processing is done inside your browser's memory using JavaScript. **No data is ever sent to any server.** You can even download the tool and use it completely offline.
+This application is strictly **client-side**. All text processing is done inside your browser's memory using JavaScript. **No data is ever sent to any server.** You can even use the tool completely offline.
 
 ## 👨‍💻 Developer
 
