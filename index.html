@@ -1,154 +1,121 @@
 ﻿<!DOCTYPE html>
-<html lang="bn">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bijoy & Unicode Converter | 100% Accurate Bangla Converter</title>
-    <meta name="description"
-        content="A fast and accurate Bijoy to Unicode and Unicode to Bijoy Bangla text converter with SutonnyMJ support.">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260929">
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4'></path><polyline points='14 2 14 8 20 8'></polyline><path d='M2 15h10'></path><path d='m9 18 3-3-3-3'></path></svg>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Bangla Converter | Ultra Premium</title>
+    <link rel="stylesheet" href="style.css?v=20261044">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <div class="app-container">
-        <header class="app-header">
-            <div class="logo">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                    <path d="M2 15h10"></path>
-                    <path d="m9 18 3-3-3-3"></path>
-                </svg>
-                <h1>Bangla Converter</h1>
-            </div>
-            <p class="subtitle">Convert between Unicode & Bijoy easily and seamlessly.</p>
-        </header>
-
-        <main class="converter-layout" id="converterApp">
-            <div class="panel" id="unicodePanel">
-                <div class="panel-header">
-                    <h2>Unicode / অভ্র (Avro)</h2>
-                    <div class="actions">
-                        <span id="unicodeCount" class="char-count">0 chars</span>
-                        <button type="button" class="btn btn-icon copy-btn" id="copyUnicodeBtn"
-                            aria-label="Copy Unicode text" onclick="copyText('unicodeInput', this)"
-                            title="Copy Unicode Text">
-                            <svg class="copy-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <textarea id="unicodeInput" class="custom-textarea font-unicode" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"
-                    placeholder="এখানে ইউনিকোড বাংলা লিখুন বা পেস্ট করুন..."></textarea>
-            </div>
-
-            <div class="conversion-controls">
-                <div class="primary-controls">
-                    <button type="button" class="btn btn-primary convert-btn action-btn action-btn-primary"
-                        id="toBijoyBtn" onclick="convertUnicodeToBijoy()" title="Convert Unicode to Bijoy (Ctrl+Enter)">
-                        <span>To Bijoy</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M5 12h14"></path>
-                            <path d="m12 5 7 7-7 7"></path>
-                        </svg>
-                    </button>
-
-                    <button type="button" class="btn btn-secondary convert-btn action-btn action-btn-secondary"
-                        id="toUnicodeBtn" onclick="convertBijoyToUnicode()"
-                        title="Convert Bijoy to Unicode (Ctrl+Enter)">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M19 12H5"></path>
-                            <path d="m12 19-7-7 7-7"></path>
-                        </svg>
-                        <span>To Unicode</span>
-                    </button>
-                </div>
-                <div class="secondary-controls">
-                    <button type="button" class="btn btn-danger btn-clear-all action-btn action-btn-secondary"
-                        id="clearAllBtn" onclick="clearAll()" title="Clear Both Areas">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" aria-hidden="true">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                        Clear All
-                    </button>
-                    <button type="button" class="btn btn-success action-btn action-btn-secondary fix-text-btn"
-                        id="fixTextBtn" onclick="fixText()" title="Fix broken conjuncts, nuktas & spacing">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" style="margin-right: 6px;">
-                            <path
-                                d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z">
-                            </path>
-                            <path d="m14 7 3 3"></path>
-                            <path d="M5 6v4"></path>
-                            <path d="M19 14v4"></path>
-                            <path d="M10 2v2"></path>
-                            <path d="M7 8H3"></path>
-                        </svg>
-                        Fix Text
-                    </button>
-                </div>
-            </div>
-
-            <div class="panel" id="bijoyPanel">
-                <div class="panel-header">
-                    <h2>Bijoy / বিজয় (SutonnyMJ)</h2>
-                    <div class="actions">
-                        <span id="bijoyCount" class="char-count">0 chars</span>
-                        <button type="button" class="btn btn-icon copy-btn" id="copyBijoyBtn"
-                            aria-label="Copy Bijoy text" onclick="copyText('bijoyInput', this)" title="Copy Bijoy Text">
-                            <svg class="copy-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <textarea id="bijoyInput" class="custom-textarea font-bijoy" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"
-                    placeholder="এখানে বিজয় লেখা লিখুন বা পেস্ট করুন..." aria-label="Bijoy text input"></textarea>
-            </div>
-        </main>
-
-        <footer class="app-footer">
-            <div class="footer-inner">
-                <div class="footer-brand">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-1);flex-shrink:0">
-                        <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <path d="M2 15h10"></path><path d="m9 18 3-3-3-3"></path>
-                    </svg>
-                    <span class="footer-name">Bijoy &harr; Unicode Converter</span>
-                </div>
-                <div class="footer-divider"></div>
-                <div class="footer-credit">
-                    <span>Crafted with</span>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="#ef4444" stroke="#ef4444" stroke-width="1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    <span>by</span>
-                    <a href="https://abdullahalsiam.bd" target="_blank" rel="noopener" class="footer-author" title="Visit Abdullah Al Siam's website">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
-                        Abdullah Al Siam
-                    </a>
-                </div>
-            </div>
-        </footer>
-
+    <!-- Advanced Animated Ambient Background -->
+    <div class="ambient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="glass-overlay"></div>
     </div>
 
-    <script src="js/engine.js?v=20260927"></script>
+    <div class="app-wrapper">
+        <!-- HEADER -->
+        <header class="app-header fade-in-down">
+            <div class="header-left">
+                <div class="logo-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                </div>
+                <div class="header-text">
+                    <h1>Bangla Converter</h1>
+                    <p class="subtitle">Next-Generation Unicode & Bijoy Translation</p>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <button type="button" class="highlight-btn btn-fix" onclick="fixText()" title="Clean common Bengali text formatting issues">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z"></path><path d="m14 7 3 3"></path></svg>
+                    <span>Text Fix</span>
+                </button>
+                <button type="button" class="highlight-btn btn-clear" onclick="clearAll()" title="Clear all text fields">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg>
+                    <span>Clear All</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="converter-board fade-in-up" id="converterApp">
+            
+            <!-- LEFT PANEL: UNICODE -->
+            <div class="board-panel" id="unicodePanel">
+                <div class="panel-header">
+                    <div class="title-group">
+                        <span class="lang-primary">Unicode</span>
+                        <span class="lang-secondary">Avro</span>
+                    </div>
+                    <div class="header-actions">
+                        <div class="phonetic-toggle-wrapper">
+                            <span class="toggle-label">Auto Phonetic</span>
+                            <label class="modern-switch">
+                                <input type="checkbox" id="phoneticToggle" checked>
+                                <span class="switch-track"></span>
+                            </label>
+                        </div>
+                        <button type="button" class="btn-copy" id="copyUnicodeBtn" onclick="copyText('unicodeInput', this)" title="Copy Unicode Text">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="textarea-wrapper">
+                    <textarea id="unicodeInput" class="custom-textarea font-unicode" spellcheck="false" placeholder="Type or paste Unicode text here..."></textarea>
+                </div>
+                <div class="panel-footer">
+                    <span id="unicodeCount" class="char-badge">0 chars</span>
+                    <button type="button" class="convert-btn btn-to-bijoy" onclick="convertUnicodeToBijoy()" title="Convert to Bijoy (Ctrl+Enter)">
+                        <span>Convert to Bijoy</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="panel-divider"></div>
+
+            <!-- RIGHT PANEL: BIJOY -->
+            <div class="board-panel" id="bijoyPanel">
+                <div class="panel-header">
+                    <div class="title-group">
+                        <span class="lang-primary">Bijoy</span>
+                        <span class="lang-secondary">SutonnyMJ</span>
+                    </div>
+                    <div class="header-actions">
+                        <button type="button" class="btn-copy" id="copyBijoyBtn" onclick="copyText('bijoyInput', this)" title="Copy Bijoy Text">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="textarea-wrapper">
+                    <textarea id="bijoyInput" class="custom-textarea font-bijoy" spellcheck="false" placeholder="Type or paste Bijoy text here..."></textarea>
+                </div>
+                <div class="panel-footer right-aligned">
+                    <span id="bijoyCount" class="char-badge">0 chars</span>
+                    <button type="button" class="convert-btn btn-to-unicode" onclick="convertBijoyToUnicode()" title="Convert to Unicode (Ctrl+Enter)">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>
+                        <span>Convert to Unicode</span>
+                    </button>
+                </div>
+            </div>
+
+        </main>
+        
+        <footer class="app-footer fade-in-up delay-2">
+            <p>Developed by <a href="https://abdullahalsiam.bd" target="_blank" rel="noopener">Abdullah Al Siam</a></p>
+        </footer>
+    </div>
+
+    <script src="js/avro.js"></script>
+    <script src="js/engine.js?v=20260931"></script>
 
     <script>
         let lastEditedSide = 'unicode';
@@ -159,10 +126,13 @@
         const bijoyCountEl = document.getElementById('bijoyCount');
 
         function updateCounts() {
-            const uText = unicodeBox.value;
-            const bText = bijoyBox.value;
-            unicodeCountEl.textContent = uText.length + ' chars';
-            bijoyCountEl.textContent = bText.length + ' chars';
+            const uBox = document.getElementById('unicodeInput');
+            const bBox = document.getElementById('bijoyInput');
+            const uCount = document.getElementById('unicodeCount');
+            const bCount = document.getElementById('bijoyCount');
+            
+            if (uBox && uCount) uCount.textContent = uBox.value.length + ' chars';
+            if (bBox && bCount) bCount.textContent = bBox.value.length + ' chars';
         }
 
         unicodeBox.addEventListener('input', () => { lastEditedSide = 'unicode'; updateCounts(); });
@@ -186,10 +156,18 @@
 
         function convertUnicodeToBijoy() {
             try {
-                const unicodeText = unicodeBox.value;
+                let unicodeText = unicodeBox.value;
                 if (!unicodeText.trim()) return showToast('Please enter Unicode text first!');
 
-                const bijoyText = BanglaConverter.unicodeToBijoy(unicodeText);
+                // Apply Phonetic translation if the toggle is checked
+                const phoneticToggle = document.getElementById('phoneticToggle');
+                if (phoneticToggle && phoneticToggle.checked && typeof AvroPhonetic !== 'undefined') {
+                    unicodeText = AvroPhonetic.parse(unicodeText).bangla;
+                    // Update the unicode box so the user sees the phonetically translated text
+                    unicodeBox.value = unicodeText;
+                }
+
+                const bijoyText = BanglaLikhi.unicodeToBijoy(unicodeText);
                 bijoyBox.value = bijoyText;
                 updateCounts();
                 highlightPanel('bijoyInput');
@@ -205,7 +183,7 @@
                 const bijoyText = bijoyBox.value;
                 if (!bijoyText.trim()) return showToast('Please enter Bijoy text first!');
 
-                const unicodeText = BanglaConverter.bijoyToUnicode(bijoyText);
+                const unicodeText = BanglaLikhi.bijoyToUnicode(bijoyText);
                 unicodeBox.value = unicodeText;
                 updateCounts();
                 highlightPanel('unicodeInput');
@@ -228,15 +206,15 @@
 
                 // If user was working on Bijoy or only Bijoy has text
                 if ((lastEditedSide === 'bijoy' && bijoyText.trim()) || (!unicodeText.trim() && bijoyText.trim())) {
-                    const rawUni = BanglaConverter.bijoyToUnicode(bijoyText);
-                    const cleanUni = BanglaConverter.fixBanglaText(rawUni);
+                    const rawUni = BanglaLikhi.bijoyToUnicode(bijoyText);
+                    const cleanUni = BanglaLikhi.fixBanglaText(rawUni);
                     unicodeBox.value = cleanUni;
-                    bijoyBox.value = BanglaConverter.unicodeToBijoy(cleanUni);
+                    bijoyBox.value = BanglaLikhi.unicodeToBijoy(cleanUni);
                 } else {
                     // Working on Unicode
-                    const cleanUni = BanglaConverter.fixBanglaText(unicodeText);
+                    const cleanUni = BanglaLikhi.fixBanglaText(unicodeText);
                     unicodeBox.value = cleanUni;
-                    bijoyBox.value = BanglaConverter.unicodeToBijoy(cleanUni);
+                    bijoyBox.value = BanglaLikhi.unicodeToBijoy(cleanUni);
                 }
 
                 updateCounts();
@@ -333,5 +311,4 @@
         updateCounts();
     </script>
 </body>
-
 </html>
