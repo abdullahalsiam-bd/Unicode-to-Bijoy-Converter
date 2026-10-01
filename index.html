@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Bangla Converter | Ultra Premium</title>
-    <link rel="stylesheet" href="style.css?v=20261044">
+    <link rel="stylesheet" href="style.css?v=20261046">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -194,36 +194,50 @@
             }
         }
 
-        function fixText() {
+                        function fixText() {
             try {
-                const unicodeText = unicodeBox.value || '';
-                const bijoyText = bijoyBox.value || '';
+                let unicodeText = unicodeBox.value || '';
+                let bijoyText = bijoyBox.value || '';
 
                 if (!unicodeText.trim() && !bijoyText.trim()) {
-                    showToast('কিছু লিখুন বা পেস্ট করুন!');
+                    showToast('কোনো টেক্সট পাওয়া যায়নি!');
                     return;
                 }
 
-                // If user was working on Bijoy or only Bijoy has text
-                if ((lastEditedSide === 'bijoy' && bijoyText.trim()) || (!unicodeText.trim() && bijoyText.trim())) {
-                    const rawUni = BanglaLikhi.bijoyToUnicode(bijoyText);
-                    const cleanUni = BanglaLikhi.fixBanglaText(rawUni);
-                    unicodeBox.value = cleanUni;
-                    bijoyBox.value = BanglaLikhi.unicodeToBijoy(cleanUni);
-                } else {
-                    // Working on Unicode
-                    const cleanUni = BanglaLikhi.fixBanglaText(unicodeText);
-                    unicodeBox.value = cleanUni;
-                    bijoyBox.value = BanglaLikhi.unicodeToBijoy(cleanUni);
-                }
+                // Function to completely sanitize PDF line breaks (handles crlf too)
+                const removePdfLineBreaks = (text) => {
+                    if (!text) return '';
+                    // Normalize to 
 
+                    text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+                    // Split by paragraph (double newline)
+                    return text.split(/\n\s*\n/).map(p => p.replace(/\n/g, ' ')).join('\n\n');
+                };
+
+                // Find the correct fixBanglaText function
+                const fixBangla = (window.BanglaConverter && window.BanglaConverter.fixBanglaText) || 
+                                  (window.BanglaLikhi && window.BanglaLikhi.fixText) || 
+                                  (window.BanglaLikhi && window.BanglaLikhi.fixBanglaText) || 
+                                  ((t) => t);
+
+                if ((lastEditedSide === 'bijoy' && bijoyText.trim()) || (!unicodeText.trim() && bijoyText.trim())) {
+                    let rawUni = BanglaLikhi.bijoyToUnicode(bijoyText) || '';
+                    rawUni = removePdfLineBreaks(rawUni);
+                    let cleanUni = fixBangla(rawUni) || '';
+                    unicodeBox.value = cleanUni;
+                    bijoyBox.value = BanglaLikhi.unicodeToBijoy(cleanUni) || '';
+                } else {
+                    let text = removePdfLineBreaks(unicodeText);
+                    let cleanUni = fixBangla(text) || '';
+                    unicodeBox.value = cleanUni;
+                    bijoyBox.value = BanglaLikhi.unicodeToBijoy(cleanUni) || '';
+                }
+                
+                showToast('Text formatting fixed ✨');
                 updateCounts();
-                highlightPanel('unicodeInput');
-                highlightPanel('bijoyInput');
-                showToast('Auto Fix completed successfully!');
             } catch (err) {
                 console.error('Fix Text error:', err);
-                showToast('Fix Text failed — engine could not process this text.');
+                showToast('Error: ' + (err.message || 'Unknown error occurred'));
             }
         }
 
